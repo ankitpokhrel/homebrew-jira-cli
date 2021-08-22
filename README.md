@@ -1,11 +1,10 @@
-# Ankitpokhrel Jira-cli
+# ankitpokhrel/jira-cli
 
-## How do I install these formulae?
+Homebrew tap for [ankitpokhrel/jira-cli](github.com/ankitpokhrel/jira-cli)
 
-`brew install ankitpokhrel/jira-cli/<formula>`
+## How do I install this formula?
 
-Or `brew tap ankitpokhrel/jira-cli` and then `brew install <formula>`.
-
-## Documentation
-
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```sh
+brew tap ankitpokhrel/jira-cli
+brew install jira-cli
+```
