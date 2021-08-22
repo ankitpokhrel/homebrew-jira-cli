@@ -1,8 +1,8 @@
-# ankitpokhrel/jira-cli
+## Homebrew JiraCLI
 
-Homebrew tap for [ankitpokhrel/jira-cli](github.com/ankitpokhrel/jira-cli)
+Homebrew tap for [ankitpokhrel/jira-cli](https://github.com/ankitpokhrel/jira-cli)
 
-## How do I install this formula?
+#### How do I install this formula?
 
 ```sh
 brew tap ankitpokhrel/jira-cli
