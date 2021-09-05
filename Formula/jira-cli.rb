@@ -24,8 +24,6 @@ class JiraCli < Formula
   def install
     system "make" if build.head?
     bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
-    (bash_completion/"jira.sh").write `#{bin}/jira completion bash`
-    (zsh_completion/"_jira").write `#{bin}/jira completion zsh`
   end
 
   test do
