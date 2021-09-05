@@ -1,10 +1,8 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
 class JiraCli < Formula
-  desc "🔥 Feature-rich interactive Jira command line."
+  desc "🔥 Feature-rich interactive Jira command-line"
   homepage "https://github.com/ankitpokhrel/jira-cli"
-  license "MIT"
   version "0.0.0"
+  license "MIT"
 
   if OS.mac?
     if Hardware::CPU.arm?
@@ -17,7 +15,7 @@ class JiraCli < Formula
   end
 
   head do
-    url "https://github.com/ankitpokhrel/jira-cli.git", :branch => "main"
+    url "https://github.com/ankitpokhrel/jira-cli.git", branch: "main"
     depends_on "go"
   end
 
