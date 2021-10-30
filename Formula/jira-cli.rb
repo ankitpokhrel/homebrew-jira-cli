@@ -19,8 +19,6 @@ class JiraCli < Formula
     depends_on "go"
   end
 
-  bottle :unneeded
-
   def install
     system "make" if build.head?
     bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
