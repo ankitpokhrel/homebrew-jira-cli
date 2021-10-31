@@ -64,7 +64,7 @@ class JiraCli < Formula
   end
 
   test do
-    system "#{bin}/jira", "--help"
+    help_text = shell_output("#{bin}/jira --help")
     assert_includes help_text, "Usage:"
   end
 end
