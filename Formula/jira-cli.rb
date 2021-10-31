@@ -37,7 +37,7 @@ class JiraCli < Formula
       sha256 "c887a81aed3a0b8db69ec6ef56e6c7e7744e86c672df68a97fff3ff7f58a1433"
     end
   end
-  
+
   def install
     if build.head?
       system "make", "install"
