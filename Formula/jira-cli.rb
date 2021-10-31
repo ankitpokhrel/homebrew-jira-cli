@@ -1,31 +1,70 @@
+# typed: false
+# frozen_string_literal: true
+
 class JiraCli < Formula
   desc "🔥 Feature-rich interactive Jira command-line"
   homepage "https://github.com/ankitpokhrel/jira-cli"
-  version "0.0.0"
+  version "0.1.0"
   license "MIT"
-
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.0.0/jira_0.0.0_macOS_arm64.tar.gz"
-      sha256 "1128decd52f3556feb00dbe3ad617545ed2966d3307f8b8f5e365adcd4c14b4d"
-    else
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.0.0/jira_0.0.0_macOS_x86_64.tar.gz"
-      sha256 "a0832bceb9087ce886fe2f0c2cb11654e023c93833738b806f429e06681cac5a"
-    end
-  end
 
   head do
     url "https://github.com/ankitpokhrel/jira-cli.git", branch: "main"
     depends_on "go"
   end
 
-  def install
-    system "make" if build.head?
-    bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_macOS_x86_64.tar.gz"
+      sha256 "c8d99498392108afbe103e9d63aaf8697377743cb5f8aa81674b90c81d6c45eb"
+
+      def install
+        system "make", "install" if build.head?
+        bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_macOS_arm64.tar.gz"
+      sha256 "aa6b38ac7b8f5026b8de0a0a4a69ceb63561baa43d6fcfa723b7299057e12b6a"
+
+      def install
+        system "make", "install" if build.head?
+        bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
+      end
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_linux_arm64.tar.gz"
+      sha256 "b9bdad9bb48bc94810ac941395ddc2eb6469b8c518ed505a70e26e2aafdf231e"
+
+      def install
+        system "make", "install" if build.head?
+        bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_linux_x86_64.tar.gz"
+      sha256 "750c48bf6abc088378a472f60e92ddf500706ab65d88478dfe459766714d04af"
+
+      def install
+        system "make", "install" if build.head?
+        bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_linux_armv6.tar.gz"
+      sha256 "c887a81aed3a0b8db69ec6ef56e6c7e7744e86c672df68a97fff3ff7f58a1433"
+
+      def install
+        system "make", "install" if build.head?
+        bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
+      end
+    end
   end
 
   test do
-    help_text = shell_output("#{bin}/jira --help")
-    assert_includes help_text, "Usage:"
+    help_text = shell_output("#{bin}/jira version")
+    assert_includes help_text, "Version=\"#{version}\""
   end
 end
