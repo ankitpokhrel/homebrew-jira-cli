@@ -64,7 +64,7 @@ class JiraCli < Formula
   end
 
   test do
-    help_text = shell_output("#{bin}/jira --help")
-    assert_includes help_text, "Usage:"
+    help_text = shell_output("#{bin}/jira version")
+    assert_includes help_text, "Version=\"#{version}\""
   end
 end
