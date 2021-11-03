@@ -4,7 +4,7 @@
 class JiraCli < Formula
   desc "🔥 Feature-rich interactive Jira command-line"
   homepage "https://github.com/ankitpokhrel/jira-cli"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   head do
@@ -14,27 +14,27 @@ class JiraCli < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_macOS_x86_64.tar.gz"
-      sha256 "c8d99498392108afbe103e9d63aaf8697377743cb5f8aa81674b90c81d6c45eb"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.1/jira_0.1.1_macOS_x86_64.tar.gz"
+      sha256 "636f31773f2a05a3c92042dd34a0ffc010ba665466fe91d906895d163e876af4"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_macOS_arm64.tar.gz"
-      sha256 "aa6b38ac7b8f5026b8de0a0a4a69ceb63561baa43d6fcfa723b7299057e12b6a"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.1/jira_0.1.1_macOS_arm64.tar.gz"
+      sha256 "32d857ace28f9798df3e0b30475fe2f95749e6e4f44d7fa281c2aa5e7cf4e5c2"
     end
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.1/jira_0.1.1_linux_armv6.tar.gz"
+      sha256 "dfb3787eb705d222e2d05a2a6a1bd00730700c57c8f1ab8b3527c91f38b4ec93"
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_linux_arm64.tar.gz"
-      sha256 "b9bdad9bb48bc94810ac941395ddc2eb6469b8c518ed505a70e26e2aafdf231e"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.1/jira_0.1.1_linux_arm64.tar.gz"
+      sha256 "b7c09942790c5f746099165efcde4049255af3712cc5ebd00b21d65ddc273a07"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_linux_x86_64.tar.gz"
-      sha256 "750c48bf6abc088378a472f60e92ddf500706ab65d88478dfe459766714d04af"
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.0/jira_0.1.0_linux_armv6.tar.gz"
-      sha256 "c887a81aed3a0b8db69ec6ef56e6c7e7744e86c672df68a97fff3ff7f58a1433"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v0.1.1/jira_0.1.1_linux_x86_64.tar.gz"
+      sha256 "7ea03cd1ca6f7bcd18ae2e131cb526168fc2914ec302dbed8c7be46914effcd7"
     end
   end
 
