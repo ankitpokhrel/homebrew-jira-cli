@@ -4,7 +4,7 @@
 class JiraCli < Formula
   desc "🔥 Feature-rich interactive Jira command-line"
   homepage "https://github.com/ankitpokhrel/jira-cli"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   head do
