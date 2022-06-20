@@ -14,27 +14,27 @@ class JiraCli < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.1/jira_1.0.0-beta.1_macOS_x86_64.tar.gz"
-      sha256 "cb1bfaebc534a1d2af86a6cf422c9aa155e878dd09cd0b9dfc99705901b7b50c"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.2/jira_1.0.0-beta.2_macOS_x86_64.tar.gz"
+      sha256 "b670a0a88e54a6fe192e880192fb3ef3db23028981d42438276140e25e1c07f0"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.1/jira_1.0.0-beta.1_macOS_arm64.tar.gz"
-      sha256 "13a2b0efba3a76cc25d16e7e952ebef986981668ac0899a7932365a4b6cf0b0c"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.2/jira_1.0.0-beta.2_macOS_arm64.tar.gz"
+      sha256 "464745ca37db27c194699e2ff620feae08f1af8d1bf613c98be95a9dd6199fe3"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.1/jira_1.0.0-beta.1_linux_armv6.tar.gz"
-      sha256 "cd2e3e14c9e34d8100eb6a5cdced8276cb9b0f6e0e80a4fc91b756e4a00497f3"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.2/jira_1.0.0-beta.2_linux_armv6.tar.gz"
+      sha256 "e860fbbdc1216d3774d6427bce6610f8832b92cdc1c54cc2eaa677acc84fa6f6"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.1/jira_1.0.0-beta.1_linux_arm64.tar.gz"
-      sha256 "3967c9cba56be644e568584e8e288a45b02ab981659ee589762d310999bbf68e"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.2/jira_1.0.0-beta.2_linux_arm64.tar.gz"
+      sha256 "48d4757b758276166eece8af07cf28d0dda80489ce620c9ec06694335835ace2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.1/jira_1.0.0-beta.1_linux_x86_64.tar.gz"
-      sha256 "9e02d52f3c66c8b8f7d368e30403a25d70248a36804c7802718858869f421a08"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.0.0-beta.2/jira_1.0.0-beta.2_linux_x86_64.tar.gz"
+      sha256 "8b388aa7a6b142fd96db7c9794cc3b3f1aaff4452874a41457d9dfe075a67e40"
     end
   end
 
