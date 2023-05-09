@@ -4,7 +4,7 @@
 class JiraCli < Formula
   desc "🔥 Feature-rich interactive Jira command-line"
   homepage "https://github.com/ankitpokhrel/jira-cli"
-  version "1.3.0"
+  version "1.4.0"
   license "MIT"
 
   head do
@@ -14,27 +14,27 @@ class JiraCli < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.3.0/jira_1.3.0_macOS_x86_64.tar.gz"
-      sha256 "53fdd850d420abcc1bc55ded056cdff754a084ab6652a729b9b8874deb824e6c"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.4.0/jira_1.4.0_macOS_x86_64.tar.gz"
+      sha256 "00dfed65840bc399cdf55e598d0d85d24de0f070be3803c0801b2bb8f7c372a9"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.3.0/jira_1.3.0_macOS_arm64.tar.gz"
-      sha256 "0cfc3837da0fef89fd1f46369a6d94c4fcd509022df5f8180eb28652240e6d28"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.4.0/jira_1.4.0_macOS_arm64.tar.gz"
+      sha256 "9503d084743d96d45ec7799f40b32895eaf06135051dfc47e835724582f36e83"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.3.0/jira_1.3.0_linux_armv6.tar.gz"
-      sha256 "33306f785a8f984a0d59bf55443ba7b6a158905b345471891faaa1640163457a"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.4.0/jira_1.4.0_linux_armv6.tar.gz"
+      sha256 "2f323ea69015fd5d5d1d21c960a2d77078837614ea2185f2377c689b942f703f"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.3.0/jira_1.3.0_linux_arm64.tar.gz"
-      sha256 "cf8b5a62ee5a3c79a0db1244f3f1b69b60ad038e2543c641de0932d63a45da34"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.4.0/jira_1.4.0_linux_arm64.tar.gz"
+      sha256 "d0b328d1330b673081a0ee4d74f18835967006c530dd942d2674e6d115e42014"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.3.0/jira_1.3.0_linux_x86_64.tar.gz"
-      sha256 "e13d854d0bbcc9379c65d13aa1e8a299d9ea2a36ad4a86b457f99eed184a1891"
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.4.0/jira_1.4.0_linux_x86_64.tar.gz"
+      sha256 "34f2aee621d2555d0e7e305a95e851dbb3bac695e893e95a339666a5d84da48d"
     end
   end
 
