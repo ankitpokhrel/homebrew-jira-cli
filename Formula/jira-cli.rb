@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 class JiraCli < Formula
-  desc "🔥 Feature-rich interactive Jira command-line"
+  desc "Feature-rich interactive Jira command-line"
   homepage "https://github.com/ankitpokhrel/jira-cli"
   version "1.5.0"
   license "MIT"
