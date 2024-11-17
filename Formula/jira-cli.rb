@@ -45,6 +45,7 @@ class JiraCli < Formula
     else
       bin.install File.exist?("bin/jira") ? "bin/jira" : "jira"
     end
+    generate_completions_from_executable(bin/"jira", "completion", shells: [:bash, :zsh, :fish])
   end
 
   test do
