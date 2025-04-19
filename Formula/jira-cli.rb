@@ -32,7 +32,11 @@ class JiraCli < Formula
       url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.6.0/jira_1.6.0_linux_arm64.tar.gz"
       sha256 "a68070e2461ac672fbc9284736db9f3fbf40e52f695dfb96be1fe10c5c1fba48"
     end
-    if Hardware::CPU.intel?
+    if Hardware::CPU.intel? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.6.0/jira_1.6.0_linux_i386.tar.gz"
+      sha256 "9ccdd68ea71b0c3a9565f7906b55a996db9f754e4ebaf45f10c64244bd5cfcb5"
+    end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/ankitpokhrel/jira-cli/releases/download/v1.6.0/jira_1.6.0_linux_x86_64.tar.gz"
       sha256 "9702ac03198fc389aa92b2500ee278ffdecb7064f2accca7aea4086323ad5352"
     end
